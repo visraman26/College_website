@@ -209,7 +209,7 @@
 		
 		
 			
-			$con= mysqli_connect("mysql13.000webhost.com","a2005313_root","visraman26","a2005313_hacka");
+			$con= mysqli_connect("host","username","password","database_name");
 			if(mysqli_connect_errno())
 			{
 				die("datbase coonection failed" . mysqli_connect_error() );
@@ -254,7 +254,7 @@
 		
 		
 			
-			$con= mysqli_connect("mysql13.000webhost.com","a2005313_root","visraman26","a2005313_hacka");
+			$con= mysqli_connect("host","username","password","database_name");
 			if(mysqli_connect_errno())
 			{
 				die("datbase coonection failed" . mysqli_connect_error() );
