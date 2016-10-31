@@ -1,0 +1,19 @@
+.col1{  font-family: Arial, Verdana, sans-serif;
+        color: brown;
+       background-color:cadetblue;
+   }
+.col2{
+      background-color:gainsboro;
+     }
+.col3{ 
+      background-color:aliceblue;
+     }
+.col4{
+      background-color:powderblue;
+     }
+.col6{  align-content: flex-end;
+        background-color:powderblue;
+    }
+.ta1{
+     margin: 30px;
+    }

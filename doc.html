@@ -1,0 +1,53 @@
+<html><head>
+<title>Doctor</title>
+<meta charset="utf-8">
+</head>
+<body>
+<h1>Doctor Information</h1>
+<table>
+<form name="doctor info" method="post">
+<tr><td><label><b>Name</b></label></td>
+<td><input type="text" name="drname"></td>
+</tr><tr></tr><tr>
+</tr>
+<tr><td><label><b>Spcialisation</b></label>
+<td><input type="text" name="speci"></td></tr><tr>
+</tr><tr>
+</tr>
+<tr><td><label><b>Availible Days</b></label></td>
+<td><input type="text" name="avail"></td></tr><tr></tr><tr>
+
+</tr>
+</tr>
+<tr><td><label><b>Joining Date</b></label></td>
+<td><input type="text" name="jdate"></td></tr><tr></tr><tr>
+</tr>
+<tr><td><a href=""><input type="submit" value="DELETE"></a></td><td><a href=""><input type="submit" value="ADD"></a></td>
+</tr>
+</table>
+<h1>Medicine Information</h1>
+<table>
+<tr><td><b>Name of Medicine</b></td><td><input type="text" name="mname" ></td><tr></tr><tr></tr></tr>
+<tr><td><b>Quantity</b></td><td><input type="text" name="quantity" ></td><tr></tr><tr></tr></tr>
+<tr><td><b>Expiry Date</b></td><td><input type="text" name="tDate" ></td><tr></tr><tr></tr></tr>
+<tr><td><a href=""><input type="submit" value="CHANGE"></a></td><td><a href=""><input type="submit" value="ADD"></a></td>
+<td><a href=""><input type="submit" value="REMOVE"></a></td></tr>
+</table>
+ <br/><br/> 
+ <a href="hos.html">Return</a>
+
+</form>
+</body>
+</html>
+<?php
+  if($_POST["submit"]=="ADD"){
+    $drname=$_POST["drname"];     
+    $speci=$_POST["speci"];     
+    $avail=$_POST["avail"];     
+    $jdate=$_POST["jdate"];     
+	mysql_connect("localhost","root","");
+	mysql_select_db("doctor");
+	$s="insert into contact(drname,speci,avail,jdate)" values("'.$drname'""'.$speci'""'.$avail'""'.$jdate'")";
+    mysql_query($s);
+  }
+?>

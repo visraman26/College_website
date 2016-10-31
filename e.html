@@ -1,0 +1,54 @@
+<html>
+ <body >
+<style>
+#head {
+color:white;
+text-align:center;
+background-color:#089;
+padding:20px;
+margin:40px;
+top:0px;
+}
+#form{
+margin:40px;
+top:0px;
+}
+</style>
+<div id="head"><b>e-recpit</div>
+ <div id="form">
+<form method="post"><table>
+    <tr><td>Recpit no-</td><td> <input type="text" name="fname"></td></tr><br>
+    <tr><td>Patient first name</td><td> <input type="text" name="fname"</td><br>
+        <td>Patient last name</td><td> <input type="text" name="lname"</td></tr><br>
+<tr>Gender<input type="radio" name="gender" >Male
+    <input type ="radio" name="gender">Female<br></tr>
+    <tr><td>Address</td><td><input type="text" name="address"</td></tr><br>
+     </table>
+Type of ID-<input type="checkbox" name="tid1">Adhar
+<input type="checkbox" name="tid2">Voter id
+<input type="checkbox" name="tid3">D.L
+    <input type="checkbox" name="tid4">any other<br>
+    <tr><td>ID-no</td>&nbsp;&nbsp;&nbsp;<td><input type="text" name="id"></td></tr><br><br>
+<input type="submit" name="submit" value="save">
+    
+</div>
+</form>
+</body>
+</html>
+<?php
+if( $_post["submit"]=="save")
+{
+ $fname=$_post["fname"];
+ $lname=$_post("lname"];
+ $gender=$_post["gender"];
+ mysql_connect("localhost","root");
+ 
+ mysql_select_db("test");
+ $s="insert into contact(fname lname gender) value('".$fname."','".$lname."','".$gender."')";
+ if(mysql_query($s))
+ {
+ echo "record saved";
+ else
+ echo "mysql_error()";
+ }
+ }
